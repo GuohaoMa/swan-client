@@ -60,7 +60,7 @@ def generate_car(_deal_list: List[OfflineDeal], target_dir) -> List[OfflineDeal]
 
     with open(csv_path, "w") as csv_file:
         fieldnames = ['car_file_name', 'car_file_path', 'piece_cid', 'data_cid', 'car_file_size', 'car_file_md5',
-                      'source_file_name', 'source_file_path', 'source_file_size', 'source_file_md5', 'car_file_url']
+                      'source_file_name', 'source_file_path', 'source_file_size', 'source_file_md5', 'car_file_address']
         csv_writer = csv.DictWriter(csv_file, delimiter=',', fieldnames=fieldnames)
         csv_writer.writeheader()
 
@@ -95,7 +95,7 @@ def generate_car(_deal_list: List[OfflineDeal], target_dir) -> List[OfflineDeal]
                 'source_file_path': _deal.source_file_path,
                 'source_file_size': _deal.source_file_size,
                 'source_file_md5': _deal.source_file_md5,
-                'car_file_url': ''
+                'car_file_address': car_file_path
             }
             csv_writer.writerow(csv_data)
 
